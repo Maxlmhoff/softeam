@@ -1,0 +1,45 @@
+body {
+  background-color: grey;
+}
+
+#div_top {
+  height: 200px;
+  width: 80%;
+  margin-left: 10%;
+  background-color: yellow
+}
+
+#div_top_right {
+  width: 20px;
+  background-color: black;
+  float: right;
+  height: 100%;
+}
+
+#div_block {
+  background-color: red;
+  margin-left: 10%;
+  width: 80%;
+  height: 700px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+#div_block_left {
+  background-color: blue;
+  width: 10%;
+  height: 600px;
+}
+
+#div_block_center {
+  background-color: green;
+  width: 70%;
+  height: 700px;
+}
+
+#div_block_right {
+  background-color: pink;
+  width: 10%;
+  height: 600px;
+}
