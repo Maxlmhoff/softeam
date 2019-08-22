@@ -6,43 +6,65 @@
 		<link rel="stylesheet" href="javascript.css">
     </head>
 	<script>
+	
+	//Nombre d'actions (servira à choisir la couleur à afficher)
 	var myColor = 0
 
-	function sayHi(){
+	function gonfler(){
+		//On incrémente pour choisir la prochaine couleur
 		myColor++;
+		
+		//On ajoute 10 pixels
 		changeSize(10)
+		
+		//On change la couleur
 		colorMeCrazy()
 	}
 	
-	function caramba(){
-			myColor--;
-			changeSize(-5)
-			colorMeCrazy()
+	function degonfler(){
+		//On décrémente pour avoir la couleur précédente
+		myColor--;
+		//On retire 10 pixels
+		changeSize(-5)
+		
+		//On change la couleur
+		colorMeCrazy()
 	}
 
 	function changeSize(value){
-		b = document.getElementById("sphere").clientHeight
-		if (b > 419 || b + value < 200){ 
-			c = 200
+		//On récupère la taille actuelle
+		tailleActuelle = document.getElementById("sphere").clientHeight
+		
+		//Si le ballon va passer au-dessus de 420px ou s'il va passer au-dessous de 200px, sa taille sera de 200px
+		if (tailleActuelle > 419 || tailleActuelle + value < 200){
+			prochaineTaille = 200
 		}else{
-			c = b + value
+			//Sinon, on ajoute la valeur passée en paramètre (10 ou -5)
+			prochaineTaille = tailleActuelle + value
 		}
 
-		document.getElementById("sphere").style.height = c + "px"
-		document.getElementById("sphere").style.width = c + "px"
+		//On change la taille en utilisant la variable prochaine taille
+		document.getElementById("sphere").style.height = prochaineTaille + "px"
+		document.getElementById("sphere").style.width = prochaineTaille + "px"
 	}
 
+	//Fonction permettant de chosir la couleur
 	function colorMeCrazy(){
 		
+		//Tableau des couleurs
 		var colors = [ "red", "green", "blue" ];
+		
+		//On récupère le modulo de la variable myColor qui correspondra à l'index de la prochaine couleur à choisir
 		choice = Math.abs(myColor % 3)		
+		
+		//On change la couleur
 		document.getElementById("sphere").style.backgroundColor = colors[choice];		
 	}
 
 	</script>
 	<body>
 		<div id="div_block_header">
-			<div id="sphere" onclick="sayHi()" onmouseout="caramba()">
+			<div id="sphere" onclick="gonfler()" onmouseout="degonfler()">
 			</div>
 		</div>
 	</body>
