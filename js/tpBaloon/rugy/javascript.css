@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height:100vh;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#div_block_header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#sphere {
+	background: red;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+#sphere:hover {
+}

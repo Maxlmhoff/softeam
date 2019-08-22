@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Test</title>
+		<link rel="stylesheet" href="javascript.css">
+    </head>
+	<script>
+	var myColor = 0
+
+	function sayHi(){
+		myColor++;
+		changeSize(10)
+		colorMeCrazy()
+	}
+	
+	function caramba(){
+			myColor--;
+			changeSize(-5)
+			colorMeCrazy()
+	}
+
+	function changeSize(value){
+		b = document.getElementById("sphere").clientHeight
+		if (b > 419 || b + value < 200){ 
+			c = 200
+		}else{
+			c = b + value
+		}
+
+		document.getElementById("sphere").style.height = c + "px"
+		document.getElementById("sphere").style.width = c + "px"
+	}
+
+	function colorMeCrazy(){
+		
+		var colors = [ "red", "green", "blue" ];
+		choice = Math.abs(myColor % 3)		
+		document.getElementById("sphere").style.backgroundColor = colors[choice];		
+	}
+
+	</script>
+	<body>
+		<div id="div_block_header">
+			<div id="sphere" onclick="sayHi()" onmouseout="caramba()">
+			</div>
+		</div>
+	</body>
+</html>
